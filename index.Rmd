@@ -64,19 +64,46 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 ]
 
 --
-
 <br>
 
 .secondary[About to start, make sure to follow along]
 
 .center[
-`r pro` .hand[FOLLOW ME]
-`r con` .hand[FOLLOW ME]
+`r pro`  .hand[FOLLOW ME .icon]
+`r con`  .hand[FOLLOW ME]
+]
+
+---
+
+# Linux and CLI
+.pull-left[
+You will be using the .hand[famous] Linux based system, where everything is going to be blacked out.
+
+- `r pro` Command Land Interface (CLI)
+
+- `r con` Graphical User Interface (GUi)
+]
+
+.pull-right[
+.secondary[Useful CL commands]
+```bash
+cd ~/path/to/dir/
+cp file/to/copy.md file/to/paste.md
+cp -r dir/to/copy/ dir/to/paste
+ls -a # list all files (including hidden)
+rm file/to/delete.txt
+```
+]
+
+.your-turn[
+How do you delete a directory then?
 ]
 
 ---
 
 # Basic Information of Sockeye
+
+**Sockeye** is a High Perfomane
 
 ```{bash}
 # This is a bash script
