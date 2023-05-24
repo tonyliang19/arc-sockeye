@@ -69,7 +69,7 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 .secondary[About to start, make sure to follow along]
 
 .center[
-`r pro`  .hand[FOLLOW ME .icon]
+`r pro`  .hand[FOLLOW ME]
 `r con`  .hand[FOLLOW ME]
 ]
 
@@ -81,7 +81,7 @@ You will be using the .hand[famous] Linux based system, where everything is goin
 
 - `r pro` Command Land Interface (CLI)
 
-- `r con` Graphical User Interface (GUi)
+- `r con` Graphical User Interface (GUI)
 ]
 
 .pull-right[
