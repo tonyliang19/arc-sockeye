@@ -383,6 +383,81 @@ class: middle, center
 
 # Bashrc
 
+- We mentioned earlier, that the `export ...` is only valid for the current bash session
+- once you log-out, it's gone
+
+--
+
+<hr>
+
+.pull-left[
+
+- You need to add this to the `.bashrc` or `.bash_profile` located in the root path `~`
+- These are places where you store configurations
+]
+
+.pull-right[
+
+- `r pro` .primary[With suitable configs, Linux >> Mac >> Windows]
+- `r con` .secondary[Without configs, Linux sucks]
+- `r con` .secondary[It's HARD to setup the configs, it will get better]
+]
+
+--
+.center[.pull-left[
+  ![](materials/img/bashrc.png)
+]]
+.center[.pull-right[
+  ![](materials/img/bash_profile.png)
+]]
+---
+class:top
+.pull-left[
+Append the following to your `.bashrc` or `bash_profile`
+
+```bash
+export ALLOC=st-singha53-1
+export SCRATCH_PATH=/scratch/$ALLOC/$USER
+export PROJECT_PATH=/arc/project/$ALLOC/$USER
+```
+
+- You could also load modules here
+- I mostly use `git`, `gcc`
+
+```bash
+module load gcc
+module load git
+```
+]
+.pull-right[
+To make it work you need either of:
+- `source ~/.bashrc`
+- `source ~/.bash_profile`
+- .secondary[It'r required to "reactivate" the configs]
+- It's what it does behind the scenes when you login
+
+.emphasis[
+The `source` is only required when you want update right away. Bash auto source everytime you start it. 
+]
+]
+
+
+--
+<hr>
+**More advanced usage**
+- You could make `alias` for long commands, or hard to remember ones
+```bash
+alias la='ls -a'
+alias h='history' # Prints list of commands you entered
+# do not delete / or prompt if deleting more than 3 files at a time 
+alias rm='rm -I --preserve-root'
+# confirmation 
+alias mv='mv -i'
+alias cp='cp -i'
+```
+--
+.secondary[Sorry, enough shell, let's go back to business]
+
 ---
 
 # Job Submission
