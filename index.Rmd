@@ -39,14 +39,20 @@ class: top
 
 --
 
-I'm being very extra to show a `toc` of what we are doing today **hopefully**
+I'm being very extra to show what we are doing today **hopefully?**
 
-.emphasis[Prepare for the next 50 minutes!]
+.emphasis[
+Prepare for the next 50 minutes, eat something, drink something, 
+
+it's gonna be a heavy session.
+]
 
 --
 
 .pull-left[
 ### Easy
+
+- Linux and CLI
 
 - Basic information of Sockeye
 
@@ -58,15 +64,17 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 .pull-right[
 ### Hard
 
+- Setup SSH and VSCode
+
 - Bashrc
 
 - Job Submission
 ]
 
 --
-<br>
 
-.secondary[About to start, make sure to follow along]
+<br><br>
+.secondary[About to start, make sure to follow along!]
 
 .center[
 `r pro`  .hand[FOLLOW ME]
@@ -75,9 +83,16 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 
 ---
 
+class: center, middle, inverse
+.larger[.hand[FOLLOW ME]]
+
+---
+
 # Linux and CLI
 .pull-left[
-You will be using the .hand[famous] Linux based system, where everything is going to be blacked out.
+We will be using the .hand[famous] Linux system, where everything is going to be blacked out.
+
+It is very cool once you are familiar at this.
 
 - `r pro` Command Land Interface (CLI)
 
@@ -88,17 +103,59 @@ You will be using the .hand[famous] Linux based system, where everything is goin
 .secondary[Useful CL commands]
 ```bash
 cd ~/path/to/dir/
-cp file/to/copy.md file/to/paste.md
-cp -r dir/to/copy/ dir/to/paste
+cp ~/file/to/copy.md file/to/paste.md
+cp -r ~/dir/to/copy/ dir/to/paste
 ls -a # list all files (including hidden)
-rm file/to/delete.txt
+rm ~/file/to/delete.txt
 ```
 ]
+
+--
 
 .your-turn[
 How do you delete a directory then?
 ]
 
+--
+
+.emphasis[
+rm -r ~/dir/to/delete 
+]
+
+---
+
+# Linux and CLI
+
+Note, there are cases that you want to delete directories where files are protected (like those of **git**)
+
+Use the following with **CAUTION**:
+
+--
+
+.alert[
+.large[`rm -rf ~/dir/to/delete/gone_is_gone`]
+]
+
+--
+
+The `-f` flag tells to delete .hand[force] without confirmation. Be very careful on what are you deleting. 
+
+You likely don't want to contact admin:
+> You: Hey, I think I have deleted my $HOME directory
+>
+> Admin: .......
+
+---
+
+# How to connect
+
+Login to sockeye with:
+```bash
+# replace cwl with your actual cwl
+ssh cwl@sockeye.arc.ubc.ca
+```
+- Upond login, you're on a `login` node
+- You can run **short** interactive jobs 
 ---
 
 # Basic Information of Sockeye
