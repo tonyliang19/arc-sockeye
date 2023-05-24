@@ -311,6 +311,50 @@ You need to have an IP address from UBC, either by connected to UBC Wifi or VPN
 
 ---
 
+class: middle, center
+background-image: url(materials/img/arc-structure.jpg)
+background-size: contain
+
+???
+
+Explain what each node is, and the workflow
+
+---
+
+## Directories on Sockeye
+.pull-left[
+![:scale 95%](materials/img/arc-dir.png)
+]
+
+.pull-right[
+![:scale 95%](materials/img/ro-dir.png)
+]
+--
+.pull-left[   
+#### /home
+- The place you land after `ssh`
+- Only the **$USER** has access
+- Things you don't want to share with others
+.emphasis[
+Recommend storing these as **ENV** variables, more on this later.
+]
+
+]
+
+.pull-right[
+#### **/scratch**
+- Playground space, widely used in compute node
+- Your intermediate results should be written here
+- .secondary[Try not storing huge stuff here]
+
+#### **/project**
+- Store your data, containers here
+- Do not store intermediate results here
+
+]
+
+---
+
 # Bashrc
 
 ---
