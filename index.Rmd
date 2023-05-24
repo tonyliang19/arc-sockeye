@@ -6,9 +6,14 @@ institute: "University of British Columbia"
 date: "Last modified -  `r Sys.Date()`"
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo=FALSE}
 source("rmd_config.R")
 knitr::opts_chunk$set(eval=FALSE)
+xaringanExtra::use_clipboard(
+  button_text = "Copy",
+  success_text = "Copied",
+  error_text = "Press Ctrl + C to copy"
+)
 ```
 
 ```{r css-extras, file="css-extras.R", echo=FALSE}
@@ -150,10 +155,59 @@ You likely don't want to contact admin:
 Most Linux commands have a built-in manual (man page) that serves as a quick guide to tell you what a command does. You could almost always type `command --help`.
 
 Let's see an example
+--
+
+.pull-left[
 ```bash
-command --help
+ls --help
 ```
 
+Seems scary right? I agree! `r pro`
+
+But it gets better later, and let's dig more into its details. Look at the following:
+.emphasis[
+Usage: ls [OPTION] ... [FILE] ...
+]
+
+This part is where it tells you how you should use a command, what **possible** options it accepts
+
+The [...] are .secondary[optional argument/s] and could be specified with the **flag** it takes. For example: `ls -a` or `ls --all` list **ALL** files of a directory.
+
+]
+.pull-right[
+![](materials/img/help_usage.jpg)
+]
+
+---
+
+.your-turn[
+
+Try on any commands of your interest and look at its doc with `--help`
+
+]
+
+--
+You could combine flags as well
+
+```bash
+ls -alh
+```
+Single letter flags **can** be combined together, BUT whole words **cannot** 
+
+```bash
+ls --all --human-readable -l
+```
+--
+
+`r pro` Order of argument doesnn't matter
+`r pro` Short options can be combined together
+`r pro` Try --help on a command that you don't know how to use
+`r con` Long options cannot be combined together
+`r con` Use -f flag wisely
+
+--
+
+.secondary[.larger[.center[Questions?]]]
 
 ---
 
