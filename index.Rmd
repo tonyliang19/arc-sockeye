@@ -199,7 +199,7 @@ ls --all --human-readable -l
 ```
 --
 
-`r pro` Order of argument doesnn't matter
+`r pro` Order of argument doesn't matter
 `r pro` Short options can be combined together
 `r pro` Try --help on a command that you don't know how to use
 `r con` Long options cannot be combined together
@@ -216,15 +216,27 @@ ls --all --human-readable -l
 Login to sockeye with:
 ```bash
 # replace cwl with your actual cwl
+# sockeye dynamically select one of three possible "login" nodes
 ssh cwl@sockeye.arc.ubc.ca
 ```
-- Upond login, you're on a `login` node
+- Upon login, you're on a `login` node
 - You can run **short** interactive jobs there
 - We will have an alias to do this later
 
+But requires some configuration on your laptop/PC
+
+--
+
 <hr>
 
-But requires some configuration on your laptop/PC
+You could also login to specific login node:
+```bash
+# one of login01, login02, login03
+ssh cwl@login03.sockeye.arc.ubc.ca
+```
+--
+
+I rarely use this one ^
 
 --
 
@@ -255,7 +267,7 @@ You need to have an IP address from UBC, either by connected to UBC Wifi or VPN
 
 .secondary[Login Nodes]
 
-- Where you land on after `ssh`
+- Where you land after `ssh`
 - Has internet access
 - You spend **MOST** time here
 ]
