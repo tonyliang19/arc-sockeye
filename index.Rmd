@@ -53,9 +53,7 @@ it's gonna be a heavy session.
 ### Easy
 
 - Linux and CLI
-
 - Basic information of Sockeye
-
 - Sockeye Login
 ]
 
@@ -65,9 +63,7 @@ it's gonna be a heavy session.
 ### Hard
 
 - Setup SSH and VSCode
-
 - Bashrc
-
 - Job Submission
 ]
 
@@ -93,9 +89,9 @@ We will be using the .hand[famous] Linux system, where everything is going to be
 
 It is very cool once you are familiar at this.
 
-- `r pro` Command Line Interface (CLI)
+`r pro` Command Line Interface (CLI)
 
-- `r con` Graphical User Interface (GUI)
+`r con` Graphical User Interface (GUI)
 ]
 
 .pull-right[
@@ -121,6 +117,8 @@ How do you delete a directory then?
 rm -r ~/dir/to/delete 
 ]
 
+The `-r` flag means to be done recursively. Many linux commands have this flag, in the case of `rm`, it remove directories and their contents recursively.
+
 ---
 
 # Linux and CLI
@@ -143,6 +141,19 @@ You likely don't want to contact admin:
 > You: Hey, I think I have deleted my $HOME directory
 >
 > Admin: .......
+>
+
+---
+
+# Linux and CLI
+
+Most Linux commands have a built-in manual (man page) that serves as a quick guide to tell you what a command does. You could almost always type `command --help`.
+
+Let's see an example
+```bash
+command --help
+```
+
 
 ---
 
