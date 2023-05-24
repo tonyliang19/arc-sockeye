@@ -323,18 +323,18 @@ Explain what each node is, and the workflow
 
 ## Directories on Sockeye
 .pull-left[
-![:scale 95%](materials/img/arc-dir.png)
+![:scale 90%](materials/img/arc-dir.png)
 ]
-
 .pull-right[
-![:scale 95%](materials/img/ro-dir.png)
+![:scale 90%](materials/img/ro-dir.png)
 ]
 --
 .pull-left[   
 #### /home
 - The place you land after `ssh`
 - Only the **$USER** has access
-- Things you don't want to share with others
+
+
 .emphasis[
 Recommend storing these as **ENV** variables, more on this later.
 ]
@@ -342,16 +342,20 @@ Recommend storing these as **ENV** variables, more on this later.
 ]
 
 .pull-right[
+#### **/project**
+- Store your data, containers here
+- Do not store intermediate results here
+
 #### **/scratch**
 - Playground space, widely used in compute node
 - Your intermediate results should be written here
 - .secondary[Try not storing huge stuff here]
 
-#### **/project**
-- Store your data, containers here
-- Do not store intermediate results here
-
 ]
+
+???
+
+These are soft links of directories, its actual path is different, demo it
 
 ---
 
