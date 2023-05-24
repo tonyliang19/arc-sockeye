@@ -7,7 +7,7 @@ date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: ["default", "middlebury-fonts"]
+    css: [default, middlebury-fonts, default]
     nature:
       highlightStyle: github
       highlightLines: true
@@ -42,6 +42,41 @@ options(htmltools.dir.version = FALSE)
 .center[<img src ="img/land_acknowledgement.gif" alt="matrix", width="80%"/>]
 ]
 
+---
+
+class: top
+
+# Topics
+
+--
+
+I'm being very extra to show a `toc` of what we are doing today **hopefully**
+
+--
+
+.pull-left[
+### Easy
+
+- Basic information of Sockeye
+
+- Sockeye Login
+]
+
+.pull-right[
+### Hard
+
+- Bashrc
+
+- Job Submission
+]
+
+--
+
+.center[
+![Saw](https://slides.yihui.name/gif/saw-branch.gif)
+
+Don't saw your slides too hard.
+]
 ---
 
 class: middle, center
