@@ -213,7 +213,7 @@ You could combine flags as well
 ```bash
 ls -alh
 ```
-Single letter flags **can** be combined together, BUT whole words **cannot** 
+Single letter flags **can** be combined together, BUT whole words .secondary[cannot] 
 
 ```bash
 ls --all --human-readable -l
@@ -240,32 +240,62 @@ Login to sockeye with:
 ssh cwl@sockeye.arc.ubc.ca
 ```
 - Upond login, you're on a `login` node
-- You can run **short** interactive jobs 
+- You can run **short** interactive jobs there
+- We will have an alias to do this later
+
+&lt;hr&gt;
+
+But requires some configuration on your laptop/PC
+
+--
+
+.emphasis[
+
+You need to have an IP address from UBC, either by connected to UBC Wifi or VPN
+
+]
+
+
 ---
 
 # Basic Information of Sockeye
 
-**Sockeye** is a High Perfomane
+**Sockeye** is a High Performance Computing (HPC) platform, use it to run .secondary[large] computational analysis or works here.
 
+--
 
-```bash
-# This is a bash script
-module load &lt;module_name/version_num&gt;
-```
+- It uses .secondary[PBS Pro], Compute Canada uses .secondary[Slurm]
 
-* List a?
+- Although requires knowledge to **Linux and CLI**
 
-* List b?
+- You have different **nodes** on Sockeye
 
-* .secondary.hand[DO NOT] 
+--
 
-.alert[
+.pull-left[
 
-Do not try any `sudo` commands from online
+.secondary[Login Nodes]
+
+- Where you land on after `ssh`
+- Has internet access
+- You spend **MOST** time here
 ]
----
 
-# Sockeye Login
+.pull-right[
+
+.secondary[Compute Nodes]
+
+- "You don't do much on here"
+- Do not have internet access
+- There's an interactive type of this
+
+]
+
+--
+
+.emphasis[
+  You could `echo $HOSTNAME` to verify if you are in a login node
+]
 
 ---
 
