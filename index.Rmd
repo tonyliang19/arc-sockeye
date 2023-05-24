@@ -8,6 +8,7 @@ date: "Last modified -  `r Sys.Date()`"
 
 ```{r setup, include=FALSE}
 source("rmd_config.R")
+knitr::opts_chunk$set(eval=FALSE)
 ```
 
 ```{r css-extras, file="css-extras.R", echo=FALSE}
@@ -52,6 +53,8 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 - Sockeye Login
 ]
 
+--
+
 .pull-right[
 ### Hard
 
@@ -60,13 +63,36 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 - Job Submission
 ]
 
-.secondary[About to start, make sure you follow with me]
+--
+
+<br>
+
+.secondary[About to start, make sure to follow along]
+
+.center[
+`r pro` .hand[FOLLOW ME]
+`r con` .hand[FOLLOW ME]
+]
 
 ---
 
 # Basic Information of Sockeye
 
+```{bash}
+# This is a bash script
+module load <module_name/version_num>
+```
 
+* List a?
+
+* List b?
+
+* .secondary.hand[DO NOT] 
+
+.alert[
+
+Do not try any `sudo` commands from online
+]
 ---
 
 # Sockeye Login
