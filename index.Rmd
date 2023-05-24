@@ -73,7 +73,6 @@ it's gonna be a heavy session.
 
 --
 
-<br><br>
 .secondary[About to start, make sure to follow along!]
 
 .center[
@@ -94,7 +93,7 @@ We will be using the .hand[famous] Linux system, where everything is going to be
 
 It is very cool once you are familiar at this.
 
-- `r pro` Command Land Interface (CLI)
+- `r pro` Command Line Interface (CLI)
 
 - `r con` Graphical User Interface (GUI)
 ]
