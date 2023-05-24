@@ -1,29 +1,23 @@
 ---
 title: "Introduction to Sockeye"
-#subtitle: "⚔<br/>with xaringan"
+subtitle: "<br/>Adapted from UBC ARC Sockeye Workshop"
 author: "Tony Liang"
 institute: "University of British Columbia"
-date: "`r Sys.Date()`"
-output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    css: [default, middlebury-fonts, default]
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+date: "Last modified -  `r Sys.Date()`"
 ---
-
 <!----
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 background-size: 100px
 background-position: 90% 8%
 ----->
+<!---class: center, middle--->
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+source("rmd_config.R")
 ```
-<!---class: center, middle--->
+
+```{r css-extras, file="css-extras.R", echo=FALSE}
+```
 
 # Land acknowledgement
 
@@ -39,7 +33,7 @@ options(htmltools.dir.version = FALSE)
 ]
 
 .pull-right[
-.center[<img src ="img/land_acknowledgement.gif" alt="matrix", width="80%"/>]
+.center[<img src ="materials/img/land_acknowledgement.gif" alt="matrix", width="80%"/>]
 ]
 
 ---
@@ -73,7 +67,7 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 ---
 
 class: middle, center
-background-image: url(img/website_bkg.png)
+background-image: url(materials/img/website_bkg.png)
 background-position: top
 background-size: contain
 

@@ -4,11 +4,22 @@
     <title>Introduction to Sockeye</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tony Liang" />
-    <meta name="date" content="2023-05-23" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/middlebury-fonts.css" rel="stylesheet" />
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script src="materials/libs/header-attrs/header-attrs.js"></script>
+    <script src="materials/libs/fabric/fabric.min.js"></script>
+    <link href="materials/libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="materials/libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#e98a15"],"pen_size":3,"eraser_size":30,"palette":["#2c365e","#e98a15","#0a8754","#a8201a","#E41A1C","#377EB8","#4DAF4A","#984EA3","#FF7F00","#FFFF33"]}) })</script>
+    <link href="materials/libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="materials/libs/panelset/panelset.js"></script>
+    <script src="materials/libs/clipboard/clipboard.min.js"></script>
+    <link href="materials/libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="materials/libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"Press Ctrl+C to Copy"})</script>
+    <link href="materials/libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="materials/libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/ae71192e04.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="materials/xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="materials/slides-style.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -17,6 +28,9 @@ class: center, middle, inverse, title-slide
 .title[
 # Introduction to Sockeye
 ]
+.subtitle[
+## <br/>Adapted from UBC ARC Sockeye Workshop
+]
 .author[
 ### Tony Liang
 ]
@@ -24,20 +38,21 @@ class: center, middle, inverse, title-slide
 ### University of British Columbia
 ]
 .date[
-### 2023-05-23
+### Last modified - 2023-05-23
 ]
 
 ---
-
 
 &lt;!----
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 background-size: 100px
 background-position: 90% 8%
 -----&gt;
-
-
 &lt;!---class: center, middle---&gt;
+
+
+
+<style>.panelset{--panel-tab-active-foreground: #2c365e;--panel-tab-hover-foreground: #e98a15;}</style>
 
 # Land acknowledgement
 
@@ -53,7 +68,7 @@ background-position: 90% 8%
 ]
 
 .pull-right[
-.center[&lt;img src ="img/land_acknowledgement.gif" alt="matrix", width="80%"/&gt;]
+.center[&lt;img src ="materials/img/land_acknowledgement.gif" alt="matrix", width="80%"/&gt;]
 ]
 
 ---
@@ -87,7 +102,7 @@ I'm being very extra to show a `toc` of what we are doing today **hopefully**
 ---
 
 class: middle, center
-background-image: url(img/website_bkg.png)
+background-image: url(materials/img/website_bkg.png)
 background-position: top
 background-size: contain
 
@@ -97,10 +112,11 @@ Slides created via the R package [**xaringan**](https://github.com/yihui/xaringa
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="materials/macros.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": false
+"countIncrementalSlides": false,
+"ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
