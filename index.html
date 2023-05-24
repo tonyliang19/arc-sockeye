@@ -331,7 +331,7 @@ Explain what each node is, and the workflow
 --
 .pull-left[   
 #### /home
-- The place you land after `ssh`
+- The place you land after `ssh`, equivalent to `~`
 - Only the **$USER** has access
 
 
@@ -357,6 +357,41 @@ Recommend storing these as **ENV** variables, more on this later.
 
 These are soft links of directories, its actual path is different, demo it
 
+---
+
+Try on it and explore through actual coding!
+--
+
+1. First setup `ENV` variables,  .alert[This is only valid for current bash session]
+
+  - we need to configure the `.bashrc` to make it    work all time. .secondary[Show you later]
+
+  ```bash
+  export ALLOC=st-singha53-1
+  export SCRATCH_PATH=/scratch/$ALLOC/$USER
+  export PROJECT_PATH=/arc/project/$ALLOC/$USER
+  ```
+--
+
+1. Print these `PATH` variables out to get its path, and `cd` into them
+  - You could name them differently later
+
+  ```bash
+  echo $SCRATCH_PATH &amp;&amp; echo $PROJECT_PATH
+  ```
+  ```bash
+  cd $SCRATCH_PATH &amp;&amp; ls -a
+  ```
+  ```bash
+  cd $PROJECT_PATH &amp;&amp; ls -a
+  ```
+  - The `&amp;&amp;` is .secondary[AND ] operator in **shell**
+--
+
+1. This one is more sockeye-specific to check spaces allocated to you
+  ```bash
+  print_quota
+  ```
 ---
 
 # Bashrc
