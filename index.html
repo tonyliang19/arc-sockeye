@@ -5,10 +5,15 @@
     <meta charset="utf-8" />
     <meta name="author" content="Tony Liang" />
     <script src="materials/libs/header-attrs/header-attrs.js"></script>
-    <script src="materials/libs/clipboard/clipboard.min.js"></script>
-    <link href="materials/libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
-    <script src="materials/libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
-    <script>window.xaringanExtraClipboard(null, {"button":"Copy","success":"Copied","error":"Press Ctrl + C to copy"})</script>
+    <script src="materials/libs/htmlwidgets/htmlwidgets.js"></script>
+    <link href="materials/libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="materials/libs/datatables-binding/datatables.js"></script>
+    <script src="materials/libs/jquery/jquery-3.6.0.min.js"></script>
+    <link href="materials/libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="materials/libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="materials/libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="materials/libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="materials/libs/crosstalk/js/crosstalk.min.js"></script>
     <script src="https://kit.fontawesome.com/ae71192e04.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="materials/xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="materials/slides-style.css" type="text/css" />
@@ -30,7 +35,7 @@ class: center, middle, inverse, title-slide
 ### University of British Columbia
 ]
 .date[
-### Last modified - 2023-05-25
+### Last modified - 2023-05-26
 ]
 
 ---
@@ -544,6 +549,39 @@ Careful and not paste your **private** key up
 
 ---
 
+#### Optional: Scp files
+
+To copy files around sockeye and your local, use the `scp` command
+
+```bash
+scp FROM:~/path/from TO:~/path/to
+```
+- The `FROM` and `TO` need to be specified, such that it represents IP address
+- `WHERE`**:**`WHAT`, **Note** the **:** is required
+- The **sockeye** server is fixed
+
+```bash
+# This means to download some_file from your $HOME
+# in sockeye to your local desktop
+scp cwl@sockeye.arc.ubc.ca:/home/cwl/some_file ~/Desktop
+```
+
+```bash
+# This means to upload some_file from your local Desktop
+# to your project dir on sockeye 
+scp ~/Desktop/some_file cwl@sockeye.arc.ubca:/arc/project/cwl/some_file
+```
+
+--
+
+Remember the alias earlier?
+```bash
+# This works as well, if you have configure the ssh properly
+scp arc:/home/cwl/some_file ~/Desktop
+```
+
+---
+
 class: middle, center
 .center[.larger[.secondary[Questions?]]]
 
@@ -578,7 +616,7 @@ class: middle, center
 .secondary[Compute Nodes]
 
 - "You don't do much on here"
-- Do not have internet access
+- Do **not** have internet access
 - There's an interactive type of this
 
 ]
@@ -588,6 +626,8 @@ class: middle, center
 .emphasis[
   You could `echo $HOSTNAME` to verify if you are in a login node
 ]
+
+.footnote[For more information, visit its official [documentation](https://confluence.it.ubc.ca/display/UARC/Quickstart+Guide#QuickstartGuide-SettingupyourComputer)]
 
 ---
 
@@ -601,6 +641,15 @@ Explain what each node is, and the workflow
 
 ---
 
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ba1db11e62e7dc98af18" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ba1db11e62e7dc98af18">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[210,8,8,6,170,8,8,44,3,2],["Base","Medium","Large","GPU16","Base","Medium","Large","GPU32","Login","Data Transfer"],["2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Silver 4116 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Silver 4216 (2.1GHz)","2 x Intel Xeon Silver 4110 (2.1GHz)","2 x Intel Xeon Silver 4110 (2.1GHz)"],[32,32,32,24,40,40,40,24,16,16],["Skylake","Skylake","Skylake","Skylake","Cascade Lake","Cascade Lake","Cascade Lake","Cascade Lake","Skylake","Skylake"],["192GB DDR4-2666 ECC","384GB DDR4-2666 ECC","768GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC","384GB DDR4-2666 ECC","768GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC"],["6GB","12GB","24GB","8GB","4.8GB","9.6GB","19.2GB","8GB","8GB","8GB"],["2TB SATA HDD","2TB SATA HDD","2TB SATA HDD","1.9TB NVMe SSD","2TB SATA HDD","2TB SATA HDD","2TB SATA HDD","1.9TB NVMe SSD","2TB SATA HDD","2TB SATA HDD"],["N/A","N/A","N/A","4 x NVIDIA Tesla V100 16GB NVLink","N/A","N/A","N/A","4 x NVIDIA Tesla V100 32GB NVLink","N/A","N/A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Nodes<\/th>\n      <th>Type<\/th>\n      <th>CPU<\/th>\n      <th>Total.Cores<\/th>\n      <th>Architecture<\/th>\n      <th>System.Memory<\/th>\n      <th>Mem.per.Core<\/th>\n      <th>Local.Storage<\/th>\n      <th>General.Purpose.GPU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":2,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[2,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+???
+
+Explain nodes difference here, add footnote
+
+---
+
 ## Directories on Sockeye
 .pull-left[
 ![:scale 100%](materials/img/arc-dir.png)
@@ -609,7 +658,9 @@ Explain what each node is, and the workflow
 ![:scale 90%](materials/img/ro-dir.png)
 ]
 --
+
 .pull-left[   
+
 #### /home
 - The place you land after `ssh`, equivalent to `~`
 - Only the **$USER** has access
@@ -636,6 +687,13 @@ Recommend storing these as **ENV** variables, more on this later.
 ???
 
 These are soft links of directories, its actual path is different, demo it
+
+1. Copy/transfer input data to /arc/project/&lt;alloc-code&gt; 
+2. Login to Sockeye and create/modify job script(s) in /scratch/&lt;alloc-code&gt;
+3. Submit jobs that read input data from /arc/project/&lt;alloc-code&gt; and writes output to /scratch/&lt;alloc-code&gt;  (or $TMDIR)
+4. Job completes successfully
+5. Copy/transfer job output from /scratch/&lt;alloc-code&gt; to /arc/projects/&lt;alloc-code&gt; 
+6. Interactively post-process and/or analyze results in /arc/project/&lt;alloc-code&gt;
 
 ---
 
@@ -672,6 +730,7 @@ Try on it and explore through actual coding!
   ```bash
   print_quota
   ```
+  
 ---
 
 class: middle, center
@@ -708,6 +767,7 @@ class: middle, center
 .center[.pull-right[
   ![](materials/img/bash_profile.png)
 ]]
+
 ---
 class:top
 .pull-left[

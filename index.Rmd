@@ -8,6 +8,9 @@ date: "Last modified -  `r Sys.Date()`"
 
 ```{r setup, include=FALSE, echo=FALSE}
 source("rmd_config.R")
+library(DT)
+library(sf)
+library(knitr)
 knitr::opts_chunk$set(eval=FALSE)
 xaringanExtra::use_clipboard(
   button_text = "Copy",
@@ -523,6 +526,39 @@ Careful and not paste your **private** key up
 
 ---
 
+#### Optional: Scp files
+
+To copy files around sockeye and your local, use the `scp` command
+
+```bash
+scp FROM:~/path/from TO:~/path/to
+```
+- The `FROM` and `TO` need to be specified, such that it represents IP address
+- `WHERE`**:**`WHAT`, **Note** the **:** is required
+- The **sockeye** server is fixed
+
+```bash
+# This means to download some_file from your $HOME
+# in sockeye to your local desktop
+scp cwl@sockeye.arc.ubc.ca:/home/cwl/some_file ~/Desktop
+```
+
+```bash
+# This means to upload some_file from your local Desktop
+# to your project dir on sockeye 
+scp ~/Desktop/some_file cwl@sockeye.arc.ubca:/arc/project/cwl/some_file
+```
+
+--
+
+Remember the alias earlier?
+```bash
+# This works as well, if you have configure the ssh properly
+scp arc:/home/cwl/some_file ~/Desktop
+```
+
+---
+
 class: middle, center
 .center[.larger[.secondary[Questions?]]]
 
@@ -557,7 +593,7 @@ class: middle, center
 .secondary[Compute Nodes]
 
 - "You don't do much on here"
-- Do not have internet access
+- Do **not** have internet access
 - There's an interactive type of this
 
 ]
@@ -567,6 +603,8 @@ class: middle, center
 .emphasis[
   You could `echo $HOSTNAME` to verify if you are in a login node
 ]
+
+.footnote[For more information, visit its official [documentation](https://confluence.it.ubc.ca/display/UARC/Quickstart+Guide#QuickstartGuide-SettingupyourComputer)]
 
 ---
 
@@ -580,6 +618,22 @@ Explain what each node is, and the workflow
 
 ---
 
+```{r nodes-sockeye, eval=TRUE, echo=FALSE, message=FALSE}
+df <- readr::read_csv("sockeye_nodes.csv")
+DT::datatable(
+  df,
+  fillContainer = FALSE,
+  options=list(pageLength=2,scrollX=TRUE)
+)
+#kable(df, format="html", booktabs=TRUE)
+```
+
+???
+
+Explain nodes difference here, add footnote
+
+---
+
 ## Directories on Sockeye
 .pull-left[
 ![:scale 100%](materials/img/arc-dir.png)
@@ -588,7 +642,9 @@ Explain what each node is, and the workflow
 ![:scale 90%](materials/img/ro-dir.png)
 ]
 --
+
 .pull-left[   
+
 #### /home
 - The place you land after `ssh`, equivalent to `~`
 - Only the **$USER** has access
@@ -615,6 +671,13 @@ Recommend storing these as **ENV** variables, more on this later.
 ???
 
 These are soft links of directories, its actual path is different, demo it
+
+1. Copy/transfer input data to /arc/project/<alloc-code> 
+2. Login to Sockeye and create/modify job script(s) in /scratch/<alloc-code>
+3. Submit jobs that read input data from /arc/project/<alloc-code> and writes output to /scratch/<alloc-code>  (or $TMDIR)
+4. Job completes successfully
+5. Copy/transfer job output from /scratch/<alloc-code> to /arc/projects/<alloc-code> 
+6. Interactively post-process and/or analyze results in /arc/project/<alloc-code>
 
 ---
 
@@ -651,6 +714,7 @@ Try on it and explore through actual coding!
   ```bash
   print_quota
   ```
+  
 ---
 
 class: middle, center
@@ -687,6 +751,7 @@ class: middle, center
 .center[.pull-right[
   ![](materials/img/bash_profile.png)
 ]]
+
 ---
 class:top
 .pull-left[
