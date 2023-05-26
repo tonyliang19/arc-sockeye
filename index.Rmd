@@ -526,6 +526,31 @@ Careful and not paste your **private** key up
 
 ---
 
+class: middle
+
+#### SSH with VSCode
+
+.pull-left[
+
+1. Open you VScode by prompting `code `in terminal
+
+1. Press `Ctrl + Shift + X `
+
+1. Type `Remote - SSH` in the search bar
+
+1. Open the first option and click `install`
+
+  - It should be installed in a few seconds
+]
+
+.pull-right[
+
+![](materials/img/ssh-install.png)
+]
+
+
+---
+
 #### Optional: Scp files
 
 To copy files around sockeye and your local, use the `scp` command
@@ -625,8 +650,9 @@ DT::datatable(
   fillContainer = FALSE,
   options=list(pageLength=2,scrollX=TRUE)
 )
-#kable(df, format="html", booktabs=TRUE)
 ```
+
+.footnote[For more information, visit [here](https://confluence.it.ubc.ca/display/UARC/About+Sockeye)]
 
 ???
 
