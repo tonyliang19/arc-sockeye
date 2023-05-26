@@ -40,7 +40,7 @@ xaringanExtra::use_clipboard(
 
 class: top
 
-# Topics
+## Topics
 
 --
 
@@ -57,8 +57,10 @@ it's gonna be a heavy session.
 .pull-left[
 ### Easy
 
-- Linux and CLI
+- VS Code Setup
+
 - Basic information of Sockeye
+
 - Sockeye Login
 ]
 
@@ -67,8 +69,10 @@ it's gonna be a heavy session.
 .pull-right[
 ### Hard
 
-- Setup SSH and VSCode
+- Linux and CLI
+
 - Bashrc
+
 - Job Submission
 ]
 
