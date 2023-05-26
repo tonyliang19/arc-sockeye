@@ -302,7 +302,7 @@ Configure ssh keys, store it in your local and arc.
 ]
 
 .pull-right[
-Prompt the following to check existing `ssh` keys with `id_*` format
+Prompt the following to check existing `ssh` keys with `id_*` format:
 ```bash
 ls -a ~/.ssh/
 ```
@@ -331,11 +331,41 @@ Two keys generated:
 
 --
 
-&lt;br&gt;&lt;br&gt;
+&lt;hr&gt;
+Add it to Sockeye
 
-.center[.secondary[.large[What about alias? Github Usage?]]]
+```bash
+# Note we are using the public key
+ssh-copy-id -i ~/.ssh/id_rsa.pub cwl@sockeye.arc.ubc.ca # replace cwl
+```
 
+???
 
+This is the last time entering password to sockeye
+
+---
+
+class: middle
+
+.pull-left[
+Only fixed not having to enter password, but still have to type the full `username@host`.
+- Looking into **alias**
+- Need .secondary[configuration]
+
+Use VScode or any text editor:
+```bash
+Host alias-you-like # I use arc
+    HostName sockeye.arc.ubc.ca
+    User cwl
+```
+- Multiple configuration (multiple servers)
+- More options available , look at [here](https://www.ssh.com/academy/ssh/config)
+]
+
+.pull-right[
+
+![:scale 97%](materials/img/config-ssh.png)
+]
 ---
 
 # Basic Information of Sockeye
