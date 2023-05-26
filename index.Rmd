@@ -604,13 +604,17 @@ class: middle, center
 - You have different **nodes** on Sockeye
 ]
 
+--
+
 .pull-right[
 
-- Managed by Administrators (`sudo`)
+`r con` Limited softwares available compare to other HPC
 
-- No "`Appstore`" or download app from anywhere
+`r con` Managed by Administrators (`sudo`)
 
--
+`r con` No "`Appstore`" or download app from anywhere
+
+
 
 ]
 --
