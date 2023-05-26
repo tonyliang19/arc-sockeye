@@ -93,6 +93,44 @@ class: center, middle, inverse
 
 ---
 
+## VS Code
+
+Visual Studio Code (VS Code) is a code/text editor made by Microsoft. 
+
+--
+
+.pull-left[
+
+.secondary[VS code]
+`r pro` Plugins for many programming languages
+`r pro` Easy learning curve
+`r pro` Has a GUI (clickable)
+`r pro` `r pro` `r pro` You could `ssh` and transmit files through it
+`r con` Not available in all device, requires installation
+]
+
+--
+
+.pull-right[
+.secondary[Other editors like Nano/Emacs/Vi]
+`r pro` Available in every Unix-liked sytem 
+`r pro` Highly customizable
+`r con` Almost to no language supports
+`r con` Steep learning curve
+`r con` No GUI (master your keyboard usage)
+]
+
+--
+
+.emphasis[
+
+Use whatever is provided to you, unless you have permission to make more from what's available.
+]
+
+.footnote[Credits to [DSCI310](https://ubc-dsci.github.io/dsci-310-student/)]
+
+---
+
 # Linux and CLI
 .pull-left[
 We will be using the .hand[famous] Linux system, where everything is going to be blacked out.
