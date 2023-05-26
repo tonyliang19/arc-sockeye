@@ -329,8 +329,11 @@ class: middle
 .pull-left[
 Only fixed not having to enter password, but still have to type the full `username@host`.
 - Looking into **alias**
+
 - Need .secondary[configuration]
 
+
+<br>
 Use VScode or any text editor:
 ```bash
 Host alias-you-like # I use arc
@@ -338,6 +341,7 @@ Host alias-you-like # I use arc
     User cwl
 ```
 - Multiple configuration (multiple servers)
+
 - More options available , look at [here](https://www.ssh.com/academy/ssh/config)
 ]
 
