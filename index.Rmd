@@ -462,7 +462,7 @@ Only fixed not having to enter password, but still have to type the full `userna
 
 
 <br>
-Use VScode or any text editor:
+Use VScode or any text editor to create `~/.ssh/config`:
 ```bash
 Host alias-you-like # I use arc
     HostName sockeye.arc.ubc.ca
