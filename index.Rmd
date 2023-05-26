@@ -133,7 +133,7 @@ Use whatever is provided to you, unless you have permission to make more from wh
 
 ### Installation Mac
 
-Open this **[link](https://code.visualstudio.com/download)** and find the right installer upon your platform (Windows/Linux/Mac).
+Open this **[link](https://code.visualstudio.com/download)** and find the right installer upon your platform (Mac/Windows/Linux).
 
 Once download is finished: 
 1. Open the downloaded `zip`
@@ -164,29 +164,48 @@ Your output should be something like:
 
 .footnote[Credits to [DSCI310](https://ubc-dsci.github.io/dsci-310-student/)]
 
+
 ---
+
+class: left
+<!---
+background-image:   url(materials/img/windows_vsc.png)
+background-position:    bottom
+background-size:    contain
+---->
 
 ### Installation Windows
 
-Open this **[link](https://code.visualstudio.com/download)** and find the right installer upon your platform (Windows/Linux/Mac).
+Open this **[link](https://code.visualstudio.com/download)** and find the right installer upon your platform (Mac/Windows/Linux).
 
-Once download is finished: 
+.pull-left[
+Once download is finished, run the installer and accept all default configuration except:
+ - **On Select Additional Tasks**
+    + Add 'Open with Code action to Windows file context menu'
+    
+    + Add ‘Open with Code’ action to Windows directory context menu”
+    
+    + Register Code as an editor for supported file types
+    
+    + Add to PATH (should be selected by default)
+]
 
+.pull-right[
+![:scale 95%](materials/img/windows_vsc.png)
+]
 
+--
+
+<br>
 .secondary[If you were lost or it did not work for you, checkout this [site](https://ubc-dsci.github.io/dsci-310-student/install_stack_windows.html#visual-studio-code)]
 
 .footnote[Credits to [DSCI310](https://ubc-dsci.github.io/dsci-310-student/)]
 
-
-
 ---
 
+### Installation Linux
 
----
-
-### Installation Windows
-
-Open this **[link](https://code.visualstudio.com/download)** and find the right installer upon your platform (Windows/Linux/Mac).
+Open this **[link](https://code.visualstudio.com/download)** and find the right installer upon your platform (Mac/Windows/Linux).
 
 Once download is finished: 
 1. Open the downloaded `zip`
@@ -708,10 +727,6 @@ alias cp='cp -i'
 ---
 
 # Job Submission
-
----
-
-# VSC Setup
 
 ---
 
