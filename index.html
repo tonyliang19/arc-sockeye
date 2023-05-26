@@ -361,6 +361,8 @@ Host alias-you-like # I use arc
     HostName sockeye.arc.ubc.ca
     User cwl
 ```
+- `Host` = `User@Hostname`
+
 - Multiple configuration (multiple servers)
 
 - More options available , look at [here](https://www.ssh.com/academy/ssh/config)
@@ -370,6 +372,31 @@ Host alias-you-like # I use arc
 
 ![:scale 97%](materials/img/config-ssh.png)
 ]
+
+--
+
+Try now with your newly created alias
+```bash
+ssh arc # Again I used arc as the alias 
+```
+
+
+
+---
+
+### Use SSH with GitHub
+
+Apply the following steps to verify your `SSH` key with **GitHub**
+
+1. Go to this **[GitHub site](https://github.com/settings/ssh/new)**
+
+1. Add a suitable .tertiary[title/name] for the key
+
+1. Copy the content of your .secondary[public] key, `id_*.pub` created early into the textbox
+
+1. Leave everything as it is and click `Add SSH key`
+
+
 ---
 
 # Basic Information of Sockeye
