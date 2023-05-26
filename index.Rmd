@@ -596,12 +596,23 @@ class: middle, center
 
 --
 
+.pull-left[
 - It uses .secondary[PBS Pro], Compute Canada uses .secondary[Slurm]
 
 - Although requires knowledge to **Linux and CLI**
 
 - You have different **nodes** on Sockeye
+]
 
+.pull-right[
+
+- Managed by Administrators (`sudo`)
+
+- No "`Appstore`" or download app from anywhere
+
+-
+
+]
 --
 
 .pull-left[
@@ -708,21 +719,29 @@ These are soft links of directories, its actual path is different, demo it
 ---
 
 Try on it and explore through actual coding!
+
 --
 
-1. First setup `ENV` variables,  .alert[This is only valid for current bash session]
+First setup `ENV` variables .alert[This is only valid for current bash session, need to configure .secondary[.bashrc] to work all time]
 
-  - we need to configure the `.bashrc` to make it    work all time. .secondary[Show you later]
+.pull-left[
+  
+- **KEY=value**, .secondary[Upper] case by convention 
+- Case sensitive
+- Retrieve the value by `$KEY`
+]
 
+.pull-right[
   ```bash
   export ALLOC=st-singha53-1
   export SCRATCH_PATH=/scratch/$ALLOC/$USER
   export PROJECT_PATH=/arc/project/$ALLOC/$USER
   ```
+]
+
 --
 
-1. Print these `PATH` variables out to get its path, and `cd` into them
-  - You could name them differently later
+Print these `*_PATH` variables out to get its path, and `cd` into them
 
   ```bash
   echo $SCRATCH_PATH && echo $PROJECT_PATH
@@ -733,10 +752,11 @@ Try on it and explore through actual coding!
   ```bash
   cd $PROJECT_PATH && ls -a
   ```
-  - The `&&` is .secondary[AND ] operator in **shell**
+  - The `&&` is the .secondary[AND] operator in **shell**
+
 --
 
-1. This one is more sockeye-specific to check spaces allocated to you
+This one is more sockeye-specific to check spaces allocated to you
   ```bash
   print_quota
   ```
