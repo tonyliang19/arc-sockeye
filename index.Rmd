@@ -146,7 +146,11 @@ Once download is finished:
 
 1. Select the option: **Install `code` command in PATH**
 
-1. Restart your terminal and try entering: `code --version`
+1. Restart your terminal and try entering: `code --version` to confirm successful installation
+
+--
+
+<hr>
 
 Your output should be something like:
   ```
@@ -156,7 +160,7 @@ Your output should be something like:
   ```
 --
 
-.secondary[If you were lost or it did not work for you, checkout this [site](https://ubc-dsci.github.io/dsci-310-student/install_stack_mac_arm.html)]
+.secondary[If you were lost or it did not work for you, checkout this [site](https://ubc-dsci.github.io/dsci-310-student/install_stack_mac_arm.html) or this [site](https://code.visualstudio.com/docs/setup/mac)] 
 
 .footnote[Credits to [DSCI310](https://ubc-dsci.github.io/dsci-310-student/)]
 
