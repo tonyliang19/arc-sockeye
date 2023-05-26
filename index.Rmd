@@ -914,7 +914,9 @@ module load gcc/7.5.0 python/3.7.10 && python --version
   - Most cases, advanced usage see [`here`](https://confluence.it.ubc.ca/display/UARC/Running+Jobs)
 - .secondary[interactive job]
   - Test small to intermediate analysis
+- Launch in `$SCRATCH_PATH`
 ]
+
 
 --
 
@@ -950,12 +952,53 @@ cd $PBS_O_WORKDIR
 
 .emphasis[
 You could `chmod +x name_script.sh` to make it more easy to notice in your `CLI`
-]
-]
+]]
 
---- 
+
+---
 
 ## Submitting your first job!
+
+.pull-left[
+```{bash hello-world}
+#!/bin/bash
+ 
+#PBS -l walltime=02:00:00,select=1:ncpus=1:mem=2gb
+#PBS -N hello-world
+#PBS -A st-singha53-1
+#PBS -m abe
+#PBS -M cwl@ubc.ca
+#PBS -o output.txt
+#PBS -e error.txt
+ 
+#####################################################
+ 
+module load gcc/7.5.0
+module load python/3.7.10
+ 
+cd $PBS_O_WORKDIR # required by Sockeye
+ 
+python hello_world.py
+```
+]
+
+.pull-right[
+Save this to `hello_world.py`
+```{bash}
+print("hello world")
+```
+
+To submit it:
+```bash
+qsub sample.sh
+```
+
+To check status:
+```bash
+qstat -u $USER
+```
+
+]
 
 ---
 
