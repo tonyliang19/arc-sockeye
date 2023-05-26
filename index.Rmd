@@ -922,7 +922,7 @@ module load gcc/7.5.0 python/3.7.10 && python --version
 ```{bash pbs-script}
 #!/bin/bash
  
-#PBS -l walltime=10:00:00,select=2:ncpus=2:mem=2gb
+#PBS -l walltime=02:00:00,select=2:ncpus=2:mem=2gb
 #PBS -N job_name
 #PBS -A alloc-code
 #PBS -m abe
@@ -942,8 +942,9 @@ cd $PBS_O_WORKDIR
 ]
 
 .pull-right[
-- These are `pbs headers` to specify resource and other metadata
+- These are `pbs headers` to specify resources
 - It could be specified in `CLI` as well
+- `walltime=DD:HH:MM:SS`, time expected for job
 - `select=2:ncpus=4:mem=2gb` means to select 2 node, each with 4 cpus and 2gb of memory
 - `alloc-code` is fixed to `st-singha53-1` or `st-singha53-1-gpu` for gpu usage
 
