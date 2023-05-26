@@ -614,9 +614,8 @@ class: middle, center
 
 `r con` No "`Appstore`" or download app from anywhere
 
-
-
 ]
+
 --
 
 .pull-left[
@@ -764,7 +763,7 @@ This one is more sockeye-specific to check spaces allocated to you
   ```bash
   print_quota
   ```
-  
+
 ---
 
 class: middle, center
@@ -853,7 +852,109 @@ alias cp='cp -i'
 
 ---
 
+## Acessing softwares in Sockeye
+
+.pull-left-narrow[
+- Load pre-downloaded modules
+- Limited option, if not provided use `virtual environment` or `container`
+- Download, compile and install (Last option)
+- Sockeye prefer `conda` over `virtualenv`
+]
+
+.pull-right-wide[
+.secondary[Useful commands for modules]
+```{bash module-stuff}
+module load bin1/x.y.z bin2/x.y.z # load two modules and their versions
+module purge # unload all modules
+module list # what you have loaded
+module save name_col # save loaded modules to "name_col"
+module savelist # list saved collections (name col this case)
+module restore name_col # load saved collection
+module avail # show all available modules
+module spider mod_name # check available `mod_name` in sockeye
+```
+]
+
+--
+
+<br>
+
+.pull-left[
+What is a module? It is a binary executable.
+
+I.e. `Python` is the programming language, `python` is the binary exe 
+]
+
+Compare the difference of these two:
+
+```bash
+module purge && python --version
+```
+
+```bash
+module load gcc/7.5.0 python/3.7.10 && python --version
+```
+
+---
+
 # Job Submission
+
+**Sockeye** is a High Performance Computing (HPC) platform, use it to run .secondary[large] computational analysis or works here.
+
+.pull-left[
+- You submit jobs with resource allocations
+
+- System manage it through queue and runs it for you
+
+- No internet access at all
+]
+
+.pull-right[
+- .secondary[batch job]
+  - Most cases, advanced usage see [`here`](https://confluence.it.ubc.ca/display/UARC/Running+Jobs)
+- .secondary[interactive job]
+  - Test small to intermediate analysis
+]
+
+--
+
+.pull-left[
+```{bash pbs-script}
+#!/bin/bash
+ 
+#PBS -l walltime=10:00:00,select=2:ncpus=2:mem=2gb
+#PBS -N job_name
+#PBS -A alloc-code
+#PBS -m abe
+#PBS -M your.name@ubc.ca
+#PBS -o output.txt
+#PBS -e error.txt
+ 
+#####################################################
+ 
+module load software_package_1
+module load software_package_2
+ 
+cd $PBS_O_WORKDIR
+ 
+<executing commands here>
+```
+]
+
+.pull-right[
+- These are `pbs headers` to specify resource and other metadata
+- It could be specified in `CLI` as well
+- `select=2:ncpus=4:mem=2gb` means to select 2 node, each with 4 cpus and 2gb of memory
+- `alloc-code` is fixed to `st-singha53-1` or `st-singha53-1-gpu` for gpu usage
+
+.emphasis[
+You could `chmod +x name_script.sh` to make it more easy to notice in your `CLI`
+]
+]
+
+--- 
+
+## Submitting your first job!
 
 ---
 
