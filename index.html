@@ -5,6 +5,10 @@
     <meta charset="utf-8" />
     <meta name="author" content="Tony Liang" />
     <script src="materials/libs/header-attrs/header-attrs.js"></script>
+    <script src="materials/libs/clipboard/clipboard.min.js"></script>
+    <link href="materials/libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="materials/libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy","success":"Copied","error":"Press Ctrl + C to copy"})</script>
     <script src="materials/libs/htmlwidgets/htmlwidgets.js"></script>
     <link href="materials/libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="materials/libs/datatables-binding/datatables.js"></script>
@@ -471,6 +475,11 @@ Add it to Sockeye
 # Note we are using the public key
 ssh-copy-id -i ~/.ssh/id_rsa.pub cwl@sockeye.arc.ubc.ca # replace cwl
 ```
+```bash
+# For Powershell
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh cwl@sockeye.arc.ubc.ca "cat &gt;&gt; .ssh/authorized_keys"
+```
+
 
 ???
 
@@ -680,8 +689,8 @@ Explain what each node is, and the workflow
 
 ---
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-64579c9aff6c2f4288de" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-64579c9aff6c2f4288de">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[210,8,8,6,170,8,8,44,3,2],["Base","Medium","Large","GPU16","Base","Medium","Large","GPU32","Login","Data Transfer"],["2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Silver 4116 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Silver 4216 (2.1GHz)","2 x Intel Xeon Silver 4110 (2.1GHz)","2 x Intel Xeon Silver 4110 (2.1GHz)"],[32,32,32,24,40,40,40,24,16,16],["Skylake","Skylake","Skylake","Skylake","Cascade Lake","Cascade Lake","Cascade Lake","Cascade Lake","Skylake","Skylake"],["192GB DDR4-2666 ECC","384GB DDR4-2666 ECC","768GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC","384GB DDR4-2666 ECC","768GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC"],["6GB","12GB","24GB","8GB","4.8GB","9.6GB","19.2GB","8GB","8GB","8GB"],["2TB SATA HDD","2TB SATA HDD","2TB SATA HDD","1.9TB NVMe SSD","2TB SATA HDD","2TB SATA HDD","2TB SATA HDD","1.9TB NVMe SSD","2TB SATA HDD","2TB SATA HDD"],["N/A","N/A","N/A","4 x NVIDIA Tesla V100 16GB NVLink","N/A","N/A","N/A","4 x NVIDIA Tesla V100 32GB NVLink","N/A","N/A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Nodes<\/th>\n      <th>Type<\/th>\n      <th>CPU<\/th>\n      <th>Total.Cores<\/th>\n      <th>Architecture<\/th>\n      <th>System.Memory<\/th>\n      <th>Mem.per.Core<\/th>\n      <th>Local.Storage<\/th>\n      <th>General.Purpose.GPU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":2,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[2,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3ddf61f37a3b681f1823" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3ddf61f37a3b681f1823">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[210,8,8,6,170,8,8,44,3,2],["Base","Medium","Large","GPU16","Base","Medium","Large","GPU32","Login","Data Transfer"],["2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Gold 6130 (2.1GHz)","2 x Intel Xeon Silver 4116 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Gold 6230 (2.1GHz)","2 x Intel Xeon Silver 4216 (2.1GHz)","2 x Intel Xeon Silver 4110 (2.1GHz)","2 x Intel Xeon Silver 4110 (2.1GHz)"],[32,32,32,24,40,40,40,24,16,16],["Skylake","Skylake","Skylake","Skylake","Cascade Lake","Cascade Lake","Cascade Lake","Cascade Lake","Skylake","Skylake"],["192GB DDR4-2666 ECC","384GB DDR4-2666 ECC","768GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC","384GB DDR4-2666 ECC","768GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC","192GB DDR4-2666 ECC"],["6GB","12GB","24GB","8GB","4.8GB","9.6GB","19.2GB","8GB","8GB","8GB"],["2TB SATA HDD","2TB SATA HDD","2TB SATA HDD","1.9TB NVMe SSD","2TB SATA HDD","2TB SATA HDD","2TB SATA HDD","1.9TB NVMe SSD","2TB SATA HDD","2TB SATA HDD"],["N/A","N/A","N/A","4 x NVIDIA Tesla V100 16GB NVLink","N/A","N/A","N/A","4 x NVIDIA Tesla V100 32GB NVLink","N/A","N/A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Nodes<\/th>\n      <th>Type<\/th>\n      <th>CPU<\/th>\n      <th>Total.Cores<\/th>\n      <th>Architecture<\/th>\n      <th>System.Memory<\/th>\n      <th>Mem.per.Core<\/th>\n      <th>Local.Storage<\/th>\n      <th>General.Purpose.GPU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":2,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[2,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 .footnote[For more information, visit [here](https://confluence.it.ubc.ca/display/UARC/About+Sockeye)]
 

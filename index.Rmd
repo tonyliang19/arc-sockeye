@@ -6,7 +6,7 @@ institute: "University of British Columbia"
 date: "Last modified -  `r Sys.Date()`"
 ---
 
-```{r setup, include=FALSE, echo=FALSE}
+```{r setup, include=FALSE, echo=FALSE, eval=TRUE}
 source("rmd_config.R")
 library(DT)
 library(sf)
@@ -448,6 +448,11 @@ Add it to Sockeye
 # Note we are using the public key
 ssh-copy-id -i ~/.ssh/id_rsa.pub cwl@sockeye.arc.ubc.ca # replace cwl
 ```
+```bash
+# For Powershell
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh cwl@sockeye.arc.ubc.ca "cat >> .ssh/authorized_keys"
+```
+
 
 ???
 
