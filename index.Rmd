@@ -74,8 +74,9 @@ it's gonna be a heavy session.
 
 --
 
-.secondary[About to start, make sure to follow along!]
+<br>
 
+.secondary[About to start, make sure to follow along!]
 .center[
 `r pro`  .hand[FOLLOW ME]
 `r con`  .hand[FOLLOW ME]
@@ -84,7 +85,7 @@ it's gonna be a heavy session.
 ---
 
 class: center, middle, inverse
-.larger[.hand[FOLLOW ME]]
+.larger[.hand-blue[FOLLOW ME]]
 
 ---
 
@@ -223,11 +224,18 @@ Login to sockeye with:
 # sockeye dynamically select one of three possible "login" nodes
 ssh cwl@sockeye.arc.ubc.ca
 ```
+.pull-left[
 - Upon login, you're on a `login` node
 - You can run **short** interactive jobs there
 - We will have an alias to do this later
+- But requires some configuration on your laptop/PC
+]
+--
+.pull-right[
+.your-turn[
+- Try `ssh --help` and see what it says?
+]]
 
-But requires some configuration on your laptop/PC
 
 --
 
@@ -249,6 +257,62 @@ I rarely use this one ^
 You need to have an IP address from UBC, either by connected to UBC Wifi or VPN
 
 ]
+
+
+---
+
+class: middle, center
+background-image: url(materials/img/ssh-keys.png)
+background-size: contain
+
+???
+
+Explain difference of private and public keys, and its usage
+
+---
+
+## Faster way to connect
+.pull-left[
+Configure ssh keys, store it in your local and arc.
+
+`r pro` No more password typing, and could use shorter **alias** for multiple servers. (if applies to you)
+`r con` .secondary[You still need the **2FA**].
+
+]
+
+.pull-right[
+Prompt the following to check existing `ssh` keys with `id_*` format
+```bash
+ls -a ~/.ssh/
+```
+]
+--
+
+<hr>
+
+.pull-left[
+Generate a new ssh key pair (`Bash`/`Zsh`/`Powershell`)
+```bash
+ssh-keygen -t rsa
+```
+- Follow the defaults by prompting `Enter`
+- Passphrase not required, personal flavor
+
+]
+
+.pull-right[
+Two keys generated:
+- one .tertiary[public] (`id_*.pub`)
+- one .secondary[private] (`id_*`)
+
+.alert[Keep the **private** safe and for your use only]
+]
+
+--
+
+<br><br>
+
+.center[.secondary[.large[What about alias? Github Usage?]]]
 
 
 ---
